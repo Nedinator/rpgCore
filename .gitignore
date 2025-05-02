@@ -1,0 +1,30 @@
+# Maven build directory
+/target/
+
+# Eclipse files
+.classpath
+.project
+.settings/
+
+# IntelliJ IDEA files
+.idea/
+*.iml
+*.iws
+out/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp files
+*.log
+*.tmp
+
+# PaperMC specific (optional, in case you test with a server inside project)
+server.jar
+/plugins/
+logs/
+cache/

@@ -1,7 +1,6 @@
 package me.ned.rpgCore.skills;
 
 import org.bukkit.Material;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
 public class Woodcutting implements Skills {
@@ -42,17 +41,6 @@ public class Woodcutting implements Skills {
             case ACACIA_LOG -> 45;
             case DARK_OAK_LOG -> 50;
             default -> 10;
-        };
-    }
-
-    private int getRequiredLevel(Material material) {
-        return switch (material) {
-            case BIRCH_LOG -> 15;
-            case SPRUCE_LOG -> 30;
-            case JUNGLE_LOG -> 45;
-            case ACACIA_LOG -> 60;
-            case DARK_OAK_LOG -> 75;
-            default -> 1;
         };
     }
 }

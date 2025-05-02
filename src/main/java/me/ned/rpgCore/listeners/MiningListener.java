@@ -12,12 +12,12 @@ public class MiningListener implements Listener {
     private final Mining mining = new Mining();
 
     @EventHandler
-    public void onBlockBreak(BlockBreakEvent event){
+    public void onBlockBreak(BlockBreakEvent event) {
         Player player = event.getPlayer();
         Block block = event.getBlock();
         Material blockType = block.getType();
 
-        if(!blockType.name().endsWith("ORE")) return;
+        if (!blockType.name().endsWith("ORE")) return;
         mining.handleMining(player, blockType);
 
     }

@@ -17,7 +17,7 @@ public class Mining implements Skills {
     @Override
     public void addXp(Player player, double amount) {
         SkillManager.addXpToSkill(player, this, amount);
-        player.sendPlainMessage("You have gained " + amount + " XP in Woodcutting.");
+        player.sendPlainMessage("You have gained " + amount + " XP in Mining.");
     }
 
     @Override

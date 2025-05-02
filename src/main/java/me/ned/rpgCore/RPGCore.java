@@ -1,5 +1,6 @@
 package me.ned.rpgCore;
 
+import me.ned.rpgCore.commands.MiningCommand;
 import me.ned.rpgCore.commands.WoodcuttingCommand;
 import me.ned.rpgCore.listeners.MiningListener;
 import me.ned.rpgCore.listeners.WoodcuttingListener;
@@ -16,6 +17,7 @@ public final class RPGCore extends JavaPlugin {
     public void onEnable() {
         //This was the intellij suggested fix?
         Objects.requireNonNull(this.getCommand("woodcutting")).setExecutor(new WoodcuttingCommand());
+        Objects.requireNonNull(this.getCommand("mining")).setExecutor(new MiningCommand());
         SkillManager.registerSkill(new Woodcutting());
         SkillManager.registerSkill(new Mining());
         getServer().getPluginManager().registerEvents(new WoodcuttingListener(), this);

@@ -6,3 +6,6 @@ commands:
   woodcutting:
     description: 'Shows your woodcutting stats'
     usage: /woodcutting
+  mining:
+    description: 'Shows your mining stats'
+    usage: /mining

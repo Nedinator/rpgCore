@@ -1,16 +1,15 @@
 package me.ned.rpgCore.commands;
 
+import me.ned.rpgCore.skills.Mining;
 import me.ned.rpgCore.skills.SkillManager;
-import me.ned.rpgCore.skills.Woodcutting;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
-public class WoodcuttingCommand implements CommandExecutor {
-
-    private final Woodcutting woodcuttingSkill = new Woodcutting();
+public class MiningCommand implements CommandExecutor {
+    private final Mining miningSkill = new Mining();
 
     //IntelliJ was yelling at me to annotate these as @NotNull? I'll look into it if it doesn't work.
     @Override
@@ -20,9 +19,9 @@ public class WoodcuttingCommand implements CommandExecutor {
             return true;
         }
 
-        int level = woodcuttingSkill.getLevel(player);
-        double xp = SkillManager.getPlayerXP(player, woodcuttingSkill);
-        player.sendPlainMessage("Your Woodcutting level is: " + level + " and you have " + xp + " experience.");
+        int level = miningSkill.getLevel(player);
+        double xp = SkillManager.getPlayerXP(player, miningSkill);
+        player.sendPlainMessage("Your Mining level is: " + level + " and you have " + xp + " experience.");
 
         return true;
     }

@@ -27,17 +27,9 @@ public class Woodcutting implements Skills {
     }
 
     public void handleWoodcutting(Player player, Material blockType) {
-        int requiredLevel = getRequiredLevel(blockType);
         int xpGained = getXpForLog(blockType);
 
-        if (getLevel(player) < requiredLevel) {
-            player.sendMessage("§cYou need Woodcutting level " + requiredLevel + " to chop this tree.");
-            return;
-        }
-
         addXp(player, xpGained);
-
-        player.getWorld().playSound(player.getLocation(), Sound.BLOCK_WOOD_BREAK, 1.0f, 1.2f);
     }
 
 

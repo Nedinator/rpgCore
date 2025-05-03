@@ -6,7 +6,7 @@ import org.bukkit.entity.Player;
 public class Farming implements Skills {
     @Override
     public String getName() {
-        return "Mining";
+        return "Farming";
     }
 
     @Override

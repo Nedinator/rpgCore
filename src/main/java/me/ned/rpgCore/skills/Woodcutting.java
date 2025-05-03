@@ -2,6 +2,7 @@ package me.ned.rpgCore.skills;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Woodcutting implements Skills {
     @Override
@@ -25,10 +26,11 @@ public class Woodcutting implements Skills {
         // it gets mad if I remove this cause the interface has it >:(
     }
 
-    public void handleWoodcutting(Player player, Material blockType) {
-        int xpGained = getXpForLog(blockType);
-
-        addXp(player, xpGained);
+    public void handleWoodcutting(Player player, Material blockType, ItemStack tool) {
+        if (tool != null && tool.getType().name().endsWith("_AXE")) {
+            int xpGained = getXpForLog(blockType);
+            addXp(player, xpGained);
+        }
     }
 
 

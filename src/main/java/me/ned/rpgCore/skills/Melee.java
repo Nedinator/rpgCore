@@ -39,7 +39,7 @@ public class Melee implements Skills {
             case COW, SHEEP, PIG, CHICKEN -> 2;
             case VILLAGER -> 5;
             case PLAYER -> 50;
-            default -> 0; // Unknown or unsupported entity type
+            default -> 0;
         };
     }
 

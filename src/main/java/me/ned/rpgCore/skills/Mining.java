@@ -2,6 +2,7 @@ package me.ned.rpgCore.skills;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class Mining implements Skills {
     @Override
@@ -25,9 +26,12 @@ public class Mining implements Skills {
 
     }
 
-    public void handleMining(Player player, Material blockType){
-        int xpGained = getXpForOre(blockType);
-        addXp(player, xpGained);
+    public void handleMining(Player player, Material blockType, ItemStack tool) {
+        if (tool != null && tool.getType().name().endsWith("_PICKAXE")) {
+            int xpGained = getXpForOre(blockType);
+            addXp(player, xpGained);
+        }
+
     }
 
     private int getXpForOre(Material material) {

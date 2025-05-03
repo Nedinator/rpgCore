@@ -17,7 +17,7 @@ public class MiningListener implements Listener {
         Player player = event.getPlayer();
         Block block = event.getBlock();
         Material blockType = block.getType();
-        ItemStack tool = player.getActiveItem();
+        ItemStack tool = player.getInventory().getItemInMainHand();
 
         if (!blockType.name().endsWith("ORE")) return;
         mining.handleMining(player, blockType, tool);

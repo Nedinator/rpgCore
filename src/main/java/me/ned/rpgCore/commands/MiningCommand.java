@@ -1,7 +1,6 @@
 package me.ned.rpgCore.commands;
 
 import me.ned.rpgCore.skills.Mining;
-import me.ned.rpgCore.skills.SkillManager;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,7 +19,7 @@ public class MiningCommand implements CommandExecutor {
         }
 
         int level = miningSkill.getLevel(player);
-        double xp = SkillManager.getPlayerXP(player, miningSkill);
+        double xp = miningSkill.getXP(player);
         player.sendPlainMessage("Your Mining level is: " + level + " and you have " + xp + " experience.");
 
         return true;

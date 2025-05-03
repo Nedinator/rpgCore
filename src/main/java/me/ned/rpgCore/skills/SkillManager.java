@@ -31,13 +31,8 @@ public class SkillManager {
         return XpUtils.getLevelFromXp(xp);
     }
 
-    public static double getPlayerSkillXP(Player player, Skills skill) {
-        return getXpFromDatabase(player, skill);
-    }
-
     public static double getPlayerXP(Player player, Skills skill) {
-        double xp = getXpFromDatabase(player, skill);
-        return xp;
+        return getXpFromDatabase(player, skill);
     }
 
     // Add XP to a skill and handle level-ups

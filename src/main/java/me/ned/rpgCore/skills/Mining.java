@@ -31,7 +31,8 @@ public class Mining implements Skills {
     }
 
     public void handleMining(Player player, Material blockType, ItemStack tool) {
-        if (tool != null && tool.getType().name().endsWith("_PICKAXE")) {
+        System.out.println(tool.getType().name());
+        if (tool.getType().name().endsWith("_PICKAXE")) {
             int xpGained = getXpForOre(blockType);
             addXp(player, xpGained);
         }

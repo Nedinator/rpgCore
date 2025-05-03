@@ -1,6 +1,5 @@
 package me.ned.rpgCore.commands;
 
-import me.ned.rpgCore.skills.SkillManager;
 import me.ned.rpgCore.skills.Woodcutting;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -21,7 +20,7 @@ public class WoodcuttingCommand implements CommandExecutor {
         }
 
         int level = woodcuttingSkill.getLevel(player);
-        double xp = SkillManager.getPlayerXP(player, woodcuttingSkill);
+        double xp = woodcuttingSkill.getXP(player);
         player.sendPlainMessage("Your Woodcutting level is: " + level + " and you have " + xp + " experience.");
 
         return true;

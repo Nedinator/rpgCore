@@ -2,7 +2,6 @@ package me.ned.rpgCore.listeners;
 
 import me.ned.rpgCore.skills.Woodcutting;
 import org.bukkit.Material;
-import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,10 +13,8 @@ public class WoodcuttingListener implements Listener {
 
     @EventHandler
     public void onLogBreak(BlockBreakEvent event) {
-
         Player player = event.getPlayer();
-        Block block = event.getBlock();
-        Material blockType = block.getType();
+        Material blockType = event.getBlock().getType();
         ItemStack tool = player.getInventory().getItemInMainHand();
 
         if (!blockType.name().endsWith("_LOG")) return;

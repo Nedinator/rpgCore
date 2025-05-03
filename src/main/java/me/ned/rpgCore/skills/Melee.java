@@ -14,6 +14,10 @@ public class Melee implements Skills {
         return SkillManager.getPlayerSkillLevel(player, this);
     }
 
+    public double getXP(Player player) {
+        return SkillManager.getPlayerXP(player, this);
+    }
+
     @Override
     public void addXp(Player player, double amount) {
         SkillManager.addXpToSkill(player, this, amount);

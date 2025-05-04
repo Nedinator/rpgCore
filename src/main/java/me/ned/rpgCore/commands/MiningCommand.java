@@ -8,6 +8,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 
 public class MiningCommand implements CommandExecutor {
+
     private final Mining miningSkill = new Mining();
 
     //IntelliJ was yelling at me to annotate these as @NotNull? I'll look into it if it doesn't work.

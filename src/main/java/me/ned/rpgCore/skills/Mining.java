@@ -35,6 +35,7 @@ public class Mining implements Skills {
         if (tool.getType().name().endsWith("_PICKAXE")) {
             int xpGained = getXpForOre(blockType);
             addXp(player, xpGained);
+
         }
 
     }

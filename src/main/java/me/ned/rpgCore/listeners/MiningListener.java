@@ -1,5 +1,6 @@
 package me.ned.rpgCore.listeners;
 
+import me.ned.rpgCore.sidebar.ScoreboardData;
 import me.ned.rpgCore.skills.Mining;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -19,7 +20,7 @@ public class MiningListener implements Listener {
 
         if (!blockType.name().endsWith("ORE")) return;
         mining.handleMining(player, blockType, tool);
-
+        ScoreboardData.setRecentSkill(player.getUniqueId(), "Mining");
     }
 
 }

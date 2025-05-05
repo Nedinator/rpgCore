@@ -3,6 +3,7 @@ package me.ned.rpgCore.skills;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.UpdateOptions;
 import me.ned.rpgCore.mongo.MongoDBUtil;
+import me.ned.rpgCore.sidebar.ScoreboardData;
 import org.bson.Document;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -53,6 +54,8 @@ public class SkillManager {
             player.sendMessage("§aLevel up! Your " + skill.getName() + " level is now " + newLevel + "!");
             player.playSound(player.getLocation(), Sound.UI_TOAST_CHALLENGE_COMPLETE, 1.0f, 1.0f);
         }
+
+        ScoreboardData.setRecentSkill(player.getUniqueId(), skill.getName(), newXp, xp, newLevel);
     }
 
     // Retrieve XP for a given player and skill from MongoDB

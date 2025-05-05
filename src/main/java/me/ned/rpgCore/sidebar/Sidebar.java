@@ -44,15 +44,21 @@ public class Sidebar implements Runnable {
         Scoreboard scoreboard = scoreboardMap.computeIfAbsent(uuid, id -> createPlayerScoreboard(player));
         Objective objective = scoreboard.getObjective("test");
         if (objective == null) return;
-
+        
         for (String entry : scoreboard.getEntries()) {
             scoreboard.resetScores(entry);
         }
 
-        String skill = ScoreboardData.getRecentSkill(uuid);
-        objective.getScore("§aRecently trained:").setScore(2);
-        objective.getScore("§f" + skill).setScore(1);
+        ScoreboardData.SkillInfo info = ScoreboardData.getRecentSkill(uuid);
+
+        int line = 5;
+        objective.getScore("§aRecently trained:").setScore(line--);
+        objective.getScore("§f" + info.skillName).setScore(line--);
+        objective.getScore("§aLevel: §f" + info.level).setScore(line--);
+        objective.getScore("§aTotal XP: §f" + (int) info.totalXP).setScore(line--);
+        objective.getScore("§aRecent Gain: §f" + (int) info.recentXP).setScore(line);
     }
+
 
     @Override
     public void run() {

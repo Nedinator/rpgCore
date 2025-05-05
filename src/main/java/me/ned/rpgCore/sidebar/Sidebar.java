@@ -44,7 +44,7 @@ public class Sidebar implements Runnable {
         Scoreboard scoreboard = scoreboardMap.computeIfAbsent(uuid, id -> createPlayerScoreboard(player));
         Objective objective = scoreboard.getObjective("test");
         if (objective == null) return;
-        
+
         for (String entry : scoreboard.getEntries()) {
             scoreboard.resetScores(entry);
         }

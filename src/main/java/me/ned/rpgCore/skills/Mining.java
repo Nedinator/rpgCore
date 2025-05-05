@@ -22,7 +22,6 @@ public class Mining implements Skills {
     @Override
     public void addXp(Player player, double amount) {
         SkillManager.addXpToSkill(player, this, amount);
-        player.sendPlainMessage("You have gained " + amount + " XP in Mining.");
     }
 
     @Override
@@ -44,14 +43,13 @@ public class Mining implements Skills {
         return switch (material) {
             case COAL_ORE, DEEPSLATE_COAL_ORE -> 10;
             case COPPER_ORE, DEEPSLATE_COPPER_ORE -> 15;
-            case IRON_ORE, DEEPSLATE_IRON_ORE -> 30;
+            case IRON_ORE, DEEPSLATE_IRON_ORE, NETHER_GOLD_ORE -> 30;
             case GOLD_ORE, DEEPSLATE_GOLD_ORE -> 40;
             case REDSTONE_ORE, DEEPSLATE_REDSTONE_ORE -> 20;
             case LAPIS_ORE, DEEPSLATE_LAPIS_ORE -> 25;
             case DIAMOND_ORE, DEEPSLATE_DIAMOND_ORE -> 50;
             case EMERALD_ORE, DEEPSLATE_EMERALD_ORE -> 60;
             case NETHER_QUARTZ_ORE -> 35;
-            case NETHER_GOLD_ORE -> 30;
             default -> 1;
         };
     }

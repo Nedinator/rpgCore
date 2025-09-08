@@ -1,0 +1,9 @@
+[versions]
+papermc = "1.21.5-R0.1-SNAPSHOT"
+mongodb = "5.4.0"
+
+[libraries]
+papermc-api = { module = "io.papermc.paper:paper-api", version.ref = "papermc"}
+mongodb-driver-sync = { module = "org.mongodb:mongodb-driver-sync", version.ref = "mongodb"}
+mongodb-driver-core = { module = "org.mongodb:mongodb-driver-core", version.ref = "mongodb"}
+mongodb-bson = { module = "org.mongodb:bson", version.ref = "mongodb"}
